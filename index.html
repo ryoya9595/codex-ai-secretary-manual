@@ -68,7 +68,6 @@
 
         <h3>2. 起動して、お持ちのChatGPTでログインする</h3>
         <p>ダウンロードしたアプリを起動し、普段使っているChatGPTアカウントでそのままログインします。新しくアカウントを作る必要はありません。</p>
-        <figure class="shot"><img src="images/02-login.png" alt="ChatGPTアカウントでログイン" /><figcaption>ChatGPTアカウントでログイン</figcaption></figure>
         <div class="callout info">
           <p>ChatGPT Plus以上のプランの場合、Codexを追加課金なしで使える場合があります。料金や利用条件は変更されることがあるため、最新情報はOpenAI公式ページで確認してください。</p>
         </div>
@@ -77,18 +76,18 @@
       <!-- 第2章 -->
       <section id="chapter2" class="block">
         <h2>第2章　専用フォルダを作ってCodexと結びつける</h2>
-        <p>Codexは「開いたフォルダ」の中で作業します。まずはCodex専用のフォルダを1つ作り、そこをCodexと結びつけましょう。</p>
-        <div class="callout warn">
-          <p>最初からデスクトップ全体・書類フォルダ全体・仕事用フォルダ全体をCodexで開かないでください。余計なファイルまで触れてしまい、事故の原因になります。</p>
+        <p>Codexは「プロジェクト」という単位で作業フォルダを管理します。デスクトップに手動でフォルダを作らなくても、Codexの機能でフォルダごと新しく作れます。</p>
+
+        <h3>1. 新しいプロジェクトを作る</h3>
+        <p>画面の「プロジェクトで作業 ▾」を開き、「新しいプロジェクトを追加」→「最初から始める」を選びます。</p>
+        <figure class="shot"><img src="images/02-new-project.png" alt="新しいプロジェクトを追加して最初から始める" /><figcaption>「新しいプロジェクトを追加」→「最初から始める」</figcaption></figure>
+
+        <h3>2. 名前を「Codex Agents」にして保存する</h3>
+        <p>プロジェクト名の入力欄に「<code>Codex Agents</code>」と入力して保存します。これで専用フォルダが作られ、Codexと結びついた状態になります。</p>
+        <figure class="shot"><img src="images/03-project-name.png" alt="プロジェクト名にCodex Agentsと入力" /><figcaption>プロジェクト名を「Codex Agents」にして保存</figcaption></figure>
+        <div class="callout info">
+          <p>すでにデスクトップなどに使いたいフォルダがある場合は、「既存のフォルダを使用」で開いてもOKです。ただし最初は、仕事用フォルダ全体など中身の多いフォルダを丸ごと開くのは避け、専用の新規プロジェクトから始めるのが安全です。</p>
         </div>
-
-        <h3>1. 専用フォルダを作る</h3>
-        <p>デスクトップに新しいフォルダを作り、名前を「<code>Codex Agents</code>」にします。</p>
-        <figure class="shot"><img src="images/03-folder.png" alt="デスクトップに作ったCodex Agentsフォルダ" /><figcaption>デスクトップに作った「Codex Agents」フォルダ</figcaption></figure>
-
-        <h3>2. Codexとフォルダを結びつける</h3>
-        <p>Codexアプリで、いま作った「Codex Agents」フォルダを開きます。これでCodexがこのフォルダの中だけで作業するようになります。</p>
-        <figure class="shot"><img src="images/04-open-folder.png" alt="CodexでCodex Agentsを開いた状態" /><figcaption>Codexで「Codex Agents」を開いた状態</figcaption></figure>
       </section>
 
       <!-- 第3章 メイン -->
@@ -96,7 +95,6 @@
         <span class="badge">★ いちばん大事な手順</span>
         <h2>第3章　AIにCodexのセットアップをしてもらう</h2>
         <p>フォルダを結びつけた新しいチャットに、下のプロンプトをそのままコピペして送信してください。送信すると、関 諒也（りょうや）が普段使っているような仕組みが自動で構築され、<strong>スキルは1つだけ・AI秘書がしれっと立ち上がります。</strong></p>
-        <figure class="shot"><img src="images/05-prompt-paste.png" alt="新しいチャットにプロンプトを貼り付けて送信" /><figcaption>新しいチャットにプロンプトを貼り付けて送信</figcaption></figure>
         <div class="callout warn">
           <p>Codexは書き込みの前に「作成・更新するファイル一覧」を提示してきます。内容を確認してから実行の許可を出してください。</p>
         </div>
@@ -115,7 +113,6 @@
           <li>あなたを知るために、いくつか質問してくる（呼び方・仕事・任せたいこと・口調）</li>
           <li>答えると、続いて「次は何をやってみる？」とメニューを出してくれる</li>
         </ol>
-        <figure class="shot"><img src="images/06-secretary-hello.png" alt="AI秘書が挨拶と質問をしてくる画面" /><figcaption>AI秘書が挨拶＆質問してくる</figcaption></figure>
 
         <h3>「次は何をやってみる？」のメニュー</h3>
         <ul class="menu">
@@ -135,7 +132,6 @@
         <h2>第4章　細かい設定を調整する</h2>
         <p>ここからは、Codexをより快適・安全に使うための細かい設定を調整します。設定項目は動画で実際の画面を見ながら解説しているので、<strong>動画を見ながら同じように設定する</strong>のがいちばん早くて確実です。</p>
         <a class="video-link" href="#" id="videoLink" aria-disabled="true">▶ 設定解説の動画（公開後にURLを差し込みます）</a>
-        <figure class="shot"><img src="images/07-settings-config.png" alt="設定画面（権限・サンドボックス・フルアクセス）" /><figcaption>設定画面（権限・サンドボックス・フルアクセスなど）</figcaption></figure>
         <h3>動画で調整する主な項目</h3>
         <div class="table-wrap">
           <table>
@@ -159,7 +155,6 @@
         <p>一度セットアップすれば、今後はいつでも同じスキル名でAI秘書を呼び出せます。</p>
         <h3>呼び出し方</h3>
         <p>入力欄に「<code>/</code>」を打つと候補メニューが出るので、その中から <code>my-agents</code> を選ぶだけです。文章の中で <code>$my-agents</code> と書いて呼び出すこともできます（どちらでも動きます）。</p>
-        <figure class="shot"><img src="images/08-slash-myagents.png" alt="スラッシュ候補に/my-agentsが出る画面" /><figcaption>「/」を打つと候補に /my-agents が出る</figcaption></figure>
 
         <h3>使い方の例</h3>
         <div class="example-grid">
@@ -177,7 +172,6 @@
       <section id="chapter6" class="block">
         <h2>第6章　パーソナライズでセキュリティを仕込む</h2>
         <p>最後に、もう一段の安心を足しておきましょう。Codexの「パーソナライズ」にある<strong>『カスタム指示』は、すべてのチャットに共通で効く</strong>指示です。ここにセキュリティのルールを入れておくと、どのプロジェクトでも自動で安全ガードがかかります。</p>
-        <figure class="shot"><img src="images/09-personalize.png" alt="設定 パーソナライズ画面" /><figcaption>設定 &gt; パーソナライズ 画面</figcaption></figure>
 
         <h3>カスタム指示にセキュリティ共通ルールを貼る</h3>
         <p>「カスタム指示」の入力欄に、次の内容をコピペして保存してください。</p>
@@ -188,7 +182,6 @@
           </div>
           <pre id="securityBody"></pre>
         </div>
-        <figure class="shot"><img src="images/10-custom-instructions.png" alt="カスタム指示にセキュリティルールを貼った状態" /><figcaption>カスタム指示にセキュリティ共通ルールを貼った状態</figcaption></figure>
         <div class="callout info">
           <p>これで「機密ファイルを触らない」「危険な操作は必ず確認する」というルールが、毎回どのチャットでも効くようになります。安心して日々の作業を任せられる土台が完成です。</p>
         </div>
