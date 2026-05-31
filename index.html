@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex AI秘書システム 導入マニュアル</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Codex</p>
+        <h1>AI秘書システム<br />導入マニュアル</h1>
+        <p class="subtitle">Codexを、日々のtodo・アイデア・日報を任せられる秘書に育てる</p>
+        <p class="author">マニュアル制作者：関 諒也</p>
+        <a class="hero-cta" href="#chapter3">いちばん大事な手順へ進む</a>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="目次">
+      <div class="toc-inner">
+        <span class="toc-title">目次</span>
+        <a href="#notice">使用上の注意</a>
+        <a href="#chapter1">第1章 なぜ作るのか</a>
+        <a href="#chapter2">第2章 始める前に</a>
+        <a href="#chapter3">第3章 プロンプト編</a>
+        <a href="#chapter4">第4章 使い方</a>
+        <a href="#chapter5">第5章 フォルダの意味</a>
+      </div>
+    </nav>
+
+    <main class="content">
+      <!-- 注意事項 -->
+      <section id="notice" class="block">
+        <h2>⚠️ 使用上の注意事項</h2>
+        <p>本マニュアルは、Codex（デスクトップ版）を使って「AI秘書システム」を作り、日々の業務整理を任せられる状態にするための手順を解説します。</p>
+        <div class="callout warn">
+          <strong>基本的な考え方</strong>
+          <p>最初はCodex専用フォルダの中だけで動かし、機密情報は触らせない。</p>
+        </div>
+        <ul>
+          <li>Codexはパソコン内のファイル作成・編集ができるAIエージェントです。設定や指示を間違えると、意図しないファイル編集や上書きが起きる可能性があります。</li>
+          <li>本マニュアルでは安全性を高めるため、最初はCodex専用フォルダの中だけで作業する前提にしています。</li>
+          <li>重要なファイル、機密情報、APIキー、パスワード、クレジットカード情報、SSH鍵などは、Codexに読ませないでください。</li>
+          <li>慣れていないうちは「フルアクセス」をオンにしないでください。AI秘書システムの作成は、専用フォルダ内だけで十分にできます。</li>
+        </ul>
+        <details class="disclaimer">
+          <summary>📄 免責事項</summary>
+          <p>本マニュアルは情報提供を目的として作成されたものであり、内容の正確性・完全性・最新性を保証するものではありません。記載された手順・設定・操作等を実行したことにより生じたいかなる損害についても、作成者は一切の責任を負いません。利用はすべて利用者ご自身の判断と自己責任のもとで行ってください。OpenAIおよびCodexの仕様・料金・利用条件は予告なく変更される場合があるため、必ず公式情報をご確認ください。</p>
+        </details>
+      </section>
+
+      <!-- 第1章 -->
+      <section id="chapter1" class="block">
+        <h2>第1章　なぜCodexでAI秘書を作るのか</h2>
+        <p>CodexはOpenAIが提供しているAIエージェントです。ChatGPTのように質問へ答えるだけでなく、ファイル作成、資料作成、ブラウザ操作、アプリ操作などを進められます。このマニュアルでは、CodexをただのチャットAIではなく、日々のtodo整理・アイデア保存・日報作成・作業ログ整理を任せられる「AI秘書」の状態にします。</p>
+
+        <h3>このマニュアルの一番大事な方針</h3>
+        <p class="strong">オリジナルスキルを増やしすぎないこと。作るスキルは AI秘書（my-secretary）だけです。</p>
+        <p>todo管理・アイデア管理・日報・テンプレートなどの必要機能は、スキルを増やすのではなく、Codexで開いている作業フォルダ内のファイルとフォルダとして作られます。</p>
+        <div class="callout info">
+          <p>スキルをいくつも作ると、初心者は「どこに何があるか」が分からなくなります。スキルは <code>my-secretary</code> の1つだけにして、データはすべて作業フォルダ内にまとめると、後から見返しやすい構成になります。</p>
+        </div>
+
+        <h3>AI秘書にできること</h3>
+        <ul>
+          <li>今日のtodoを作成・更新し、優先度（high / medium / low）で整理する</li>
+          <li>思いついたアイデアや企画案を保存する</li>
+          <li>1日の完了事項・残タスク・気づきを日報としてまとめる</li>
+          <li>todoをもとに、その日の時間割（午前・午後の動き方）を提案する</li>
+        </ul>
+
+        <h3>Codexの公式情報</h3>
+        <ul class="links">
+          <li>公式の導入ページ：<a href="https://openai.com/codex/get-started/" target="_blank" rel="noopener noreferrer">openai.com/codex/get-started</a></li>
+          <li>デスクトップアプリ紹介：<a href="https://openai.com/index/introducing-the-codex-app/" target="_blank" rel="noopener noreferrer">introducing-the-codex-app</a></li>
+        </ul>
+        <p>ChatGPT Plus以上のプランの場合、Codexを追加課金なしで使える場合があります。料金や利用条件は変更されることがあるため、最新情報はOpenAI公式ページで確認してください。</p>
+      </section>
+
+      <!-- 第2章 -->
+      <section id="chapter2" class="block">
+        <h2>第2章　このマニュアルを始める前に</h2>
+        <p>実際の作成に入る前に、Codex専用の作業フォルダを用意し、安全寄りの設定にしておきます。</p>
+
+        <h3>Codex専用の作業フォルダを作る</h3>
+        <div class="callout warn">
+          <p>最初からデスクトップ全体・書類フォルダ全体・仕事用フォルダ全体をCodexで開かないでください。余計なファイルまで触れてしまい、事故の原因になります。</p>
+        </div>
+        <ol>
+          <li>デスクトップで新規フォルダを作る</li>
+          <li>フォルダ名を「<code>Codex_AI秘書</code>」にする</li>
+          <li>Codexアプリを開く</li>
+          <li>作成したフォルダをCodexで開く</li>
+        </ol>
+
+        <h3>最初のおすすめ設定（安全寄り）</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>項目</th><th>推奨設定</th><th>理由</th></tr></thead>
+            <tbody>
+              <tr><td>権限</td><td>自動レビュー</td><td>危ない操作だけ確認してくれる</td></tr>
+              <tr class="row-flag"><td>フルアクセス</td><td>OFF</td><td>最初は事故防止を優先する</td></tr>
+              <tr><td>サンドボックス</td><td>作業フォルダ内で作業</td><td>余計な場所を触らせない</td></tr>
+              <tr><td>実行中のスリープ防止</td><td>ON</td><td>作業中にPCが止まらない</td></tr>
+              <tr><td>作業モード</td><td>日常業務向け</td><td>AI副業・SNS運用・資料作成に向く</td></tr>
+              <tr><td>ブラウザ/コンピューター使用</td><td>必要な時だけON確認</td><td>画面操作が必要な時に使う</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout info">
+          <p>慣れていないうちは「フルアクセス」をオンにしないでください。AI秘書システムの作成は、専用フォルダ内だけで十分にできます。</p>
+        </div>
+      </section>
+
+      <!-- 第3章 メイン -->
+      <section id="chapter3" class="block highlight">
+        <span class="badge">★ いちばん大事な手順</span>
+        <h2>第3章　AIに作ってもらう（プロンプトコピペ編）</h2>
+        <p>先ほど作ったCodex専用フォルダを開いた状態で、入力欄に以下のプロンプトをそのままコピペしてください。Codexがいくつか質問してくるので、それに答えると、あなた専用のAI秘書システムが作られます。</p>
+        <div class="callout warn">
+          <p>Codexは書き込みの前に「作成・更新するファイル一覧」を提示してきます。内容を確認してから実行の許可を出してください。</p>
+        </div>
+        <h3>このプロンプトのポイント</h3>
+        <ul>
+          <li>オリジナルスキルは <code>my-secretary</code> だけを作る</li>
+          <li>todo / ideas / logs / templates / vault は作業フォルダ内に作る</li>
+          <li>追加のオリジナルスキルは勝手に作らない</li>
+          <li>機密ファイル（.env・APIキー等）は読まない</li>
+        </ul>
+
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <span>コピペ用プロンプト</span>
+            <button type="button" id="copyPromptButton" class="copy-btn">コピー</button>
+          </div>
+          <pre id="promptBody"></pre>
+        </div>
+        <div class="callout info">
+          <p>このプロンプトを貼り付けると、Codexがヒアリング → 構成の確認 → 作成 → 動作確認まで、確認を取りながら順番に進めてくれます。</p>
+        </div>
+      </section>
+
+      <!-- 第4章 -->
+      <section id="chapter4" class="block">
+        <h2>第4章　AI秘書の使い方</h2>
+        <p>AI秘書（<code>my-secretary</code>）の作成が終わったら、Codexで呼び出して使います。</p>
+        <h3>呼び出し方</h3>
+        <p>Codexのスラッシュメニューでは <code>/my-secretary</code> として表示されます。文章の中で <code>$my-secretary</code> と書いて呼び出すこともできます（どちらでも動きます）。入力欄に「/」を打つと候補メニューに出てくるので、そこから選べばOKです。</p>
+
+        <h3>使い方の例</h3>
+        <div class="example-grid">
+          <div class="example"><span class="example-tag">todoを整理</span><code>$my-secretary 今日やることは、請求書作成と動画構成チェックです。優先度を整理して、今日のtodoに保存して。</code></div>
+          <div class="example"><span class="example-tag">アイデア保存</span><code>$my-secretary 新しい教材のアイデアを思いついた。初心者向けにCodexの安全設定だけ解説する特典を作りたい。</code></div>
+          <div class="example"><span class="example-tag">日報作成</span><code>$my-secretary 今日やったことを日報にまとめて。完了したのは動画構成、残りはサムネ案の作成。</code></div>
+          <div class="example"><span class="example-tag">スケジュール提案</span><code>$my-secretary 今日のtodoを見て、午前と午後の動き方を提案して。</code></div>
+        </div>
+      </section>
+
+      <!-- 第5章 -->
+      <section id="chapter5" class="block">
+        <h2>第5章　フォルダの意味とやらない方がいいこと</h2>
+        <h3>作成されるフォルダの意味</h3>
+        <p>作業データはすべてこのフォルダ内にまとまるため、後から見返しやすくなります。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>フォルダ</th><th>用途</th></tr></thead>
+            <tbody>
+              <tr><td><code>company/secretary/todos/</code></td><td>今日やること、優先度、残タスク</td></tr>
+              <tr><td><code>company/secretary/ideas/</code></td><td>思いつき、企画案、改善案</td></tr>
+              <tr><td><code>company/secretary/logs/</code></td><td>日報、作業記録、振り返り</td></tr>
+              <tr><td><code>company/secretary/templates/</code></td><td>todoや日報のテンプレート</td></tr>
+              <tr><td><code>company/secretary/vault/</code></td><td>重要な成果物や保管したいメモ</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>最初は避けた方がいいこと</h3>
+        <ul class="avoid">
+          <li>「フルアクセス」をオンにする</li>
+          <li>デスクトップ全体をCodexで開く</li>
+          <li>仕事用フォルダ全体をいきなり開く</li>
+          <li>.env やAPIキー入りのファイルを読ませる</li>
+          <li>よく分からないMCPサーバーを追加する</li>
+          <li>AI秘書以外のオリジナルスキルを一気に増やす</li>
+        </ul>
+        <div class="callout info">
+          <p>まずはAI秘書だけで十分です。todo・アイデア・日報・スケジュール整理ができるだけでも、Codexの便利さはかなり体感できます。</p>
+        </div>
+      </section>
+
+      <section class="block closing">
+        <h2>おわりに</h2>
+        <ol>
+          <li>Codex専用の作業フォルダを作る</li>
+          <li>安全寄りの設定にする</li>
+          <li>プロンプトをCodexに貼り付ける</li>
+          <li>AI秘書スキル（my-secretary）を1つだけ作る</li>
+          <li>必要なtodo・ideas・logs・templatesはフォルダ内に作る</li>
+        </ol>
+        <p>オリジナルスキルを増やしすぎると、初心者は管理が難しくなります。まずはAI秘書だけ作って、日々の作業を整理するところから始めてください。最初の一歩は「小さく・安全に」が成功のコツです。</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Codex AI秘書システム 導入マニュアル</p>
+      <p class="muted">マニュアル制作者：関 諒也</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
