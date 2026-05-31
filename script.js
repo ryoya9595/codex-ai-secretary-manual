@@ -5,9 +5,8 @@ Codexで開いているこの作業フォルダ内に、todo管理・アイデ�
 
 重要:
 - オリジナルスキルは「my-agents」だけを作成してください。
-- 他の追加スキル（my-ai-news、my-blog-writer など）は作らないでください。
 - todo・ideas・logs・templates などの機能は、スキルを増やすのではなく、この作業フォルダ内のファイル/フォルダとして作成してください。
-- いきなりファイルを書き換えず、書き込み前に「作成・更新するファイル一覧」を提示してください。
+- 【最重要】いきなりファイルを書き換えないでください。作成・更新するファイルの一覧を必ず先に提示し、私の許可を取ってから実行してください。
 - APIキー・パスワード・クレジットカード情報・SSH鍵・.env などの機密情報は、読まない・表示しない・編集しないでください。
 
 ---
@@ -23,9 +22,6 @@ company/secretary/ideas/
 company/secretary/logs/
 company/secretary/templates/
 company/secretary/vault/
-company/secretary/templates/todo-template.md
-company/secretary/templates/daily-log-template.md
-company/secretary/templates/idea-template.md
 
 さらに、Codexで呼び出せるスキルを1つだけ作ってください。
 作成するスキル: my-agents
