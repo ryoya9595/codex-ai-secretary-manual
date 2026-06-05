@@ -27,7 +27,8 @@
         <a href="#chapter3">第3章 セットアップ</a>
         <a href="#chapter4">第4章 立ち上げ方</a>
         <a href="#chapter5">第5章 セキュリティ</a>
-        <a href="#chapter6">第6章 どんどん頼ろう</a>
+        <a href="#chapter6">第6章 ツール・ゲーム作成</a>
+        <a href="#chapter7">第7章 どんどん頼ろう</a>
       </div>
     </nav>
 
@@ -166,11 +167,45 @@
         <div class="callout info">
           <p>これで「機密ファイルを触らない」「危険な操作は必ず確認する」というルールが、毎回どのチャットでも効くようになります。安心して日々の作業を任せられる土台が完成です。</p>
         </div>
+
+        <h3>（おまけ）Chrome拡張機能でブラウザと連携する</h3>
+        <p>Codexの公式Chrome拡張機能を入れると、Codexが<strong>ブラウザを直接操作</strong>できるようになります（リサーチや画面操作などがよりスムーズに）。</p>
+        <p><a class="btn-link" href="https://chromewebstore.google.com/detail/codex/hehggadaopoacecdllhhajmbjkdcmajg?hl=ja" target="_blank" rel="noopener noreferrer">Codex拡張機能（Chromeウェブストア）はこちら</a></p>
+        <figure class="shot"><img src="images/11-extension.png" alt="CodexのChrome拡張機能ページ" width="2466" height="1342" /><figcaption>Chromeウェブストアの「Codex」→「Chromeに追加」</figcaption></figure>
+        <div class="callout info">
+          <p>拡張機能は必須ではありません。ブラウザ操作を使いたくなったら入れればOKです。</p>
+        </div>
       </section>
 
-      <!-- 第6章 締め -->
-      <section id="chapter6" class="block closing">
-        <h2>第6章　あとは、どんどんCodexに頼っていこう</h2>
+      <!-- 第6章 ツール・ゲーム作成 -->
+      <section id="chapter6" class="block">
+        <h2>第6章　Webツールやゲームを作ってみよう</h2>
+        <p>Codexはコードも書けます。つまり、<strong>ブラウザで動くちょっとしたWebツールや、簡単なゲームも作れます。</strong>「あったらいいな」を、その場で形にできるのがCodexの楽しいところです。</p>
+
+        <h3>たとえばこんなものが作れます</h3>
+        <ul>
+          <li>見積書・請求書みたいな<strong>仕事ツール</strong></li>
+          <li>診断・占い・カウントダウンなどの<strong>遊べるツール</strong></li>
+          <li>クリックゲームや簡単な<strong>ミニゲーム</strong>（PC・スマホ対応）</li>
+        </ul>
+
+        <h3>作り方は「お願いするだけ」</h3>
+        <p>下のようなプロンプトを送れば、Codexが1枚のHTMLファイルでサクッと作ってくれます。完成したら、その場でプレビューして動きを確認できます。</p>
+        <div class="prompt-card">
+          <div class="prompt-head">
+            <span>コピペ用プロンプト（例）</span>
+            <button type="button" class="copy-btn" data-target="toolPrompt">コピー</button>
+          </div>
+          <pre id="toolPrompt"></pre>
+        </div>
+        <div class="callout info">
+          <p>まずは小さなものでOK。動いた瞬間、一気に楽しくなります。慣れてきたら、できたツールを公開してURLで配ることもできます（GitHub Pages など）。</p>
+        </div>
+      </section>
+
+      <!-- 第7章 締め -->
+      <section id="chapter7" class="block closing">
+        <h2>第7章　あとは、どんどんCodexに頼っていこう</h2>
         <p>ここまでで準備は完了です。あとは難しく考えず、やりたいことをどんどんCodexに依頼していきましょう。</p>
         <ul>
           <li>資料を作りたい、リサーチしたい、文章を書きたい — まず頼んでみる</li>
