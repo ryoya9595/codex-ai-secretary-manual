@@ -200,6 +200,12 @@ tr.row-flag td { background: var(--yellow-bg); font-weight: 700; }
 }
 
 /* ===== Prompt card ===== */
+.prompt-group-label {
+  margin: 18px 0 8px;
+  font-size: 14px;
+  color: var(--blue-dark);
+  font-weight: 800;
+}
 .prompt-card {
   border: 1px solid var(--blue);
   border-radius: 12px;
