@@ -338,6 +338,40 @@ figure.shot figcaption {
   text-align: center;
 }
 
+/* ===== 章間バナー：解説動画への誘導 ===== */
+.video-cta {
+  text-align: center;
+  background: linear-gradient(180deg, #eef5ff 0%, #e3eefb 100%);
+  border: 2px solid var(--blue);
+  box-shadow: 0 6px 22px rgba(46, 109, 164, 0.16);
+}
+.video-cta-badge {
+  display: inline-block;
+  background: var(--blue);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.video-cta h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 0 0 12px;
+}
+.video-cta p { margin: 8px 0; }
+.video-cta .btn-link {
+  margin: 14px auto 6px;
+  font-size: 16px;
+  padding: 14px 32px;
+}
+.video-cta-note {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
 /* ===== Video link (chapter 4) ===== */
 .video-link {
   display: block;
